@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Replace with your API endpoint for login
-    fetch("http://localhost:3000/user/login", {
+    fetch("https://comiclearing.onrender.com/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Replace with your API endpoint for signup
-    fetch("http://localhost:3000/user/register", {
+    fetch("https://comiclearing.onrender.com/user/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
