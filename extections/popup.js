@@ -4,7 +4,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("login-form");
   const signupForm = document.getElementById("signup-form");
 
+  const logout = document.getElementById("logout");
+  logout.addEventListener("click", function () {
+    const loginContainer = document.getElementById("loginContainer");
+    const signupContainer = document.getElementById("signupContainer");
+    const modifyContainer = document.getElementById("modifyContainer");
+    const username = document.getElementById("username")
+    localStorage.removeItem("token");
+    localStorage.removeItem("name");
+    loginContainer.style.display = "block";
+    signupContainer.style.display = "block";
+    modifyContainer.style.display = "none";
+    username.style.display = "none";
+    logout.style.display = "none";
 
+  })
 
   loginForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -95,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const loginContainer = document.getElementById("loginContainer");
     const signupContainer = document.getElementById("signupContainer");
     const modifyContainer = document.getElementById("modifyContainer");
+    const logout = document.getElementById("logout");
     const username = document.getElementById("username")
     const token = localStorage.getItem('token');
     const name = localStorage.getItem('name');
@@ -105,11 +120,13 @@ document.addEventListener("DOMContentLoaded", function () {
       signupContainer.style.display = "none";
       modifyContainer.style.display = "block";
       username.style.display = "block";
+      logout.style.display = "block";
     } else {
       loginContainer.style.display = "block";
       signupContainer.style.display = "block";
       modifyContainer.style.display = "none";
       username.style.display = "none";
+      logout.style.display = "none";
     }
   }
   document.getElementById("modifyButton").addEventListener("click", () => {
